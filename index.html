@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CMDSense Demo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/distance.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CMDSense Demo</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- ViewFinder for users -->
+    <header id="viewfinder" class="container">
+
+        <!-- Wrapper for Slides -->
+        <div class="row text-center" id="aim">
+            <!-- Create the camera viewfinder -->
+            <video autoplay id="viewfinder"></video>
+        </div>
+
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Find your approximate distance from the stage:</h1>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 text-center" id="step0">
+                <h4>How tall are you?</h4>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="feet">Feet</label>
+                        <input type="text" id="feet" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="inches">Inches</label>
+                        <input type="text" id="inches" />
+                    </div>
+                </div>
+                <button type="button" class="btn btn-lg btn-success step" id="step0btn">Enter Height</button>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 text-center" id="step1">
+                <h4>Aim straight forward until your phone vibrates and button changes</h4>
+                <p id="output1"></p>
+                <button type="button" class="btn btn-lg btn-success step" id="step1btn">Straight Forward</button>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 text-center" id="step2">
+                <h4>Keep your arms in the same position and slowly angle the phone until you can see the bottom of the stage in the middle of your viewing window</h4>
+                <p id="output2"></p>
+                <button type="button" class="btn btn-lg btn-success step" id="step2btn">Bottom of Stage</button>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 text-center step" id="step3">
+                <h4 id="result"></h4>
+                <button type="button" class="btn btn-lg btn-primary" id="step3btn">RESET</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>Email us for more info: <a href="mailto:maxime@cmdsense.com?Subject=Great%20Pitch%21">maxime@cmdsense.com</a></p>
+                </div>
+                <div class="col-sm-4 col-sm-offset-4">
+                    <p>Copyright &copy; CMDSense 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script src="js/distance.js"></script>
+
+</body>
+
+</html>
