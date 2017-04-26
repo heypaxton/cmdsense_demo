@@ -65,7 +65,12 @@ function handleOrientation(event) {
     
     if (x == 90) {
         window.navigator.vibrate(200);
+        video.css({"border-color": "#24af1a", 
+             "border-width":"8px", 
+             "border-style":"solid"});
         console.log("Yes");
+    } else {
+        video.css({"border":"0"});
     }
 
 }
