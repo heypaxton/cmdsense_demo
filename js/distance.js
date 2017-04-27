@@ -66,13 +66,12 @@ function handleOrientation(event) {
     if (x > 170 && x < 185) {
         window.navigator.vibrate(200);
         $('#aim').css({"border-color": "#24af1a", 
-             "border-width":"8px", 
+             "border-width":"20px", 
              "border-style":"solid"});
         console.log("Yes");
     } else {
         $('#aim').css({"border":"0"});
     }
-
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
