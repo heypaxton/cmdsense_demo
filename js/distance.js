@@ -31,13 +31,13 @@ function handleSuccess(stream) {
                 videoDevices[videoDeviceIndex++] =  device.deviceId;    
               }
             });
-            console.log(videoDevices);
+            //console.log(videoDevices);
             constraints =  window.constraints = {
               audio: false,
               video: true,
               width: { min: 1024, ideal: 1280, max: 1920 },
               height: { min: 776, ideal: 720, max: 1080 },
-              deviceId: { exact: videoDevices[1]  } 
+              deviceId: { exact: videoDevices[0]  } 
             };
         });
     }
