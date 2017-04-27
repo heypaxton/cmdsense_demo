@@ -52,7 +52,7 @@ navigator.mediaDevices.getUserMedia(constraints).
 function handleOrientation(event) {
   var x = event.beta;  // In degree in the range [-180,180]
 
-  $('.output').val("angle: " + x + "\n");
+  $('.output').val(x);
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
