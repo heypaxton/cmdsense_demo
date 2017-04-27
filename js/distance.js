@@ -19,6 +19,7 @@ function handleSuccess(stream) {
   var videoTracks = stream.getVideoTracks();
     if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
       console.log("enumerateDevices() not supported.");
+        errorMsg("Sorry your phone is not supported.", "Sorry your phone is not supported.");
     } else {
         navigator.mediaDevices.enumerateDevices()
           .then(devices => {
@@ -39,15 +40,15 @@ function handleSuccess(stream) {
               height: { min: 776, ideal: 720, max: 1080 },
               deviceId: { exact: videoDevices[0]  } 
             };
+              console.log('Got stream with constraints:', constraints);
+              console.log('Using video device: ' + videoTracks[0].label);
+              stream.oninactive = function() {
+                console.log('Stream inactive');
+              };
+              window.stream = stream; // make variable available to browser console
+              video.srcObject = stream;
         });
     }
-  console.log('Got stream with constraints:', constraints);
-  console.log('Using video device: ' + videoTracks[0].label);
-  stream.oninactive = function() {
-    console.log('Stream inactive');
-  };
-  window.stream = stream; // make variable available to browser console
-  video.srcObject = stream;
 }
 
 function handleError(error) {
