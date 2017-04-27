@@ -163,7 +163,7 @@ $('#step2btn').click(function() {
     var finalInches = (finalResult%12);
     var finalFeet = (finalResult-finalInches)/12;
     finalInches = finalInches.toFixed(2);
-    $('#result').val("You are: " + finalFeet + "feet " + finalInches + "from the stage");
+    $('#result').html("<span>You are: " + finalFeet + "feet " + finalInches + "from the stage</span>");
     console.log(angle2);
     console.log(finalResult);
     console.log(finalFeet);
