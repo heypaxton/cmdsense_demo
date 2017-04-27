@@ -19,6 +19,7 @@ function handleSuccess(stream) {
   var videoTracks = stream.getVideoTracks();
     if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
       console.log("enumerateDevices() not supported.");
+    } else {
         navigator.mediaDevices.enumerateDevices()
           .then(devices => {
             var videoDevices = [0,0];
