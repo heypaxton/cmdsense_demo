@@ -63,7 +63,7 @@ function handleOrientation(event) {
   // x and y to [0,180]
   x += 90;
     
-    if (x > 80 && x < 100) {
+    if (x > 170 && x < 185) {
         window.navigator.vibrate(200);
         $('#aim').css({"border-color": "#24af1a", 
              "border-width":"8px", 
