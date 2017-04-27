@@ -17,38 +17,6 @@ var constraints = window.constraints = {
   video: true
 };
 
-if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
-  console.log("enumerateDevices() not supported.");
-  return;
-}
-
-/*navigator.mediaDevices.enumerateDevices()
-  .then(devices => {
-    var videoDevices = [0,0];
-    var videoDeviceIndex = 0;
-    devices.forEach(function(device) {
-      console.log(device.kind + ": " + device.label +
-        " id = " + device.deviceId);
-      if (device.kind == "videoinput") {  
-        videoDevices[videoDeviceIndex++] =  device.deviceId;    
-      }
-    });
-
-
-    var constraints =  window.constraints = {
-      audio: false,
-      video: true,
-      width: { min: 1024, ideal: 1280, max: 1920 },
-      height: { min: 776, ideal: 720, max: 1080 },
-      deviceId: { exact: videoDevices[1]  } 
-    };
-  return navigator.mediaDevices.getUserMedia({ video: constraints });
-
-})
-    .catch(function(err) {
-      console.log(err.name + ": " + error.message);
-    });*/
-
 function handleSuccess(stream) {
   var videoTracks = stream.getVideoTracks();
   console.log('Got stream with constraints:', constraints);
@@ -82,6 +50,7 @@ function errorMsg(msg, error) {
 navigator.mediaDevices.getUserMedia(constraints).
     then(handleSuccess).catch(handleError);
 
+
 function handleOrientation(event) {
   var x = event.beta;  // In degree in the range [-180,180]
 
@@ -98,7 +67,7 @@ function handleOrientation(event) {
     
     if (x == 90) {
         window.navigator.vibrate(200);
-        video.css({"border-color": "#24af1a", 
+        aim.css({"border-color": "#24af1a", 
              "border-width":"8px", 
              "border-style":"solid"});
         console.log("Yes");
