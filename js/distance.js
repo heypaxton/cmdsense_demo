@@ -8,7 +8,7 @@ var height;
 var angle1;
 var angle2;
 var finalResult;
-var output = document.querySelector('.output');
+var output = $('.output');
 var errorElement = document.querySelector('#errorMsg');
 var video = document.querySelector('video');
 var aim = document.querySelector('#aim');
@@ -53,6 +53,7 @@ navigator.mediaDevices.getUserMedia(constraints).
 
 function handleOrientation(event) {
   var x = event.beta;  // In degree in the range [-180,180]
+    x = 2;
 
   output.val() = "angle: " + x + "\n";
 
