@@ -17,8 +17,30 @@ var constraints = window.constraints = {
 
 function handleSuccess(stream) {
   var videoTracks = stream.getVideoTracks();
+    if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+      console.log("enumerateDevices() not supported.");
+        navigator.mediaDevices.enumerateDevices()
+          .then(devices => {
+            var videoDevices = [0,0];
+            var videoDeviceIndex = 0;
+            devices.forEach(function(device) {
+              console.log(device.kind + ": " + device.label +
+                " id = " + device.deviceId);
+              if (device.kind == "videoinput") {  
+                videoDevices[videoDeviceIndex++] =  device.deviceId;    
+              }
+            });
+            constraints =  window.constraints = {
+              audio: false,
+              video: true,
+              width: { min: 1024, ideal: 1280, max: 1920 },
+              height: { min: 776, ideal: 720, max: 1080 },
+              deviceId: { exact: videoDevices[1]  } 
+            };
+        });
+    }
   console.log('Got stream with constraints:', constraints);
-  console.log('Using video device: ' + videoTracks[1].label);
+  console.log('Using video device: ' + videoTracks[0].label);
   stream.oninactive = function() {
     console.log('Stream inactive');
   };
