@@ -64,14 +64,14 @@ function handleOrientation(event) {
   // x and y to [0,180]
   x += 90;
     
-    if (x == 90) {
+    if (80<x<100) {
         window.navigator.vibrate(200);
         aim.css({"border-color": "#24af1a", 
              "border-width":"8px", 
              "border-style":"solid"});
         console.log("Yes");
     } else {
-        video.css({"border":"0"});
+        aim.css({"border":"0"});
     }
 
 }
