@@ -10,7 +10,6 @@ var angle2;
 var finalResult;
 var errorElement = document.querySelector('#errorMsg');
 var video = document.querySelector('video');
-var aim = document.querySelector('#aim');
 var constraints = window.constraints = {
   audio: false,
   video: true
@@ -66,12 +65,12 @@ function handleOrientation(event) {
     
     if (80<x<100) {
         window.navigator.vibrate(200);
-        aim.css({"border-color": "#24af1a", 
+        $('#aim').css({"border-color": "#24af1a", 
              "border-width":"8px", 
              "border-style":"solid"});
         console.log("Yes");
     } else {
-        aim.css({"border":"0"});
+        $('#aim').css({"border":"0"});
     }
 
 }
