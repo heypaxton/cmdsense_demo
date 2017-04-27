@@ -31,6 +31,7 @@ function handleSuccess(stream) {
                 videoDevices[videoDeviceIndex++] =  device.deviceId;    
               }
             });
+            console.log(videoDevices);
             constraints =  window.constraints = {
               audio: false,
               video: true,
